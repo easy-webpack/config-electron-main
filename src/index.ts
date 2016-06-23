@@ -4,7 +4,7 @@ const webpack = require('webpack')
 /**
  * @param externals list packages that should be used as node modules, directly from node_modules (without bundling)
  */
-export function electronMain(filename = 'electron.js') {
+export = function electronMain(filename = 'electron.js') {
   return function electronMain(this: WebpackConfig): WebpackConfig {
     return {
       target: 'electron',

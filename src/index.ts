@@ -7,6 +7,10 @@ const webpack = require('webpack')
 export = function electronMain({filename = 'electron.js'} = {}) {
   return function electronMain(this: WebpackConfig): WebpackConfig {
     return {
+      metadata: {
+        ELECTRON: 'main'
+      },
+
       target: 'electron',
 
       output: {

@@ -17,13 +17,6 @@ export = function electronMain({filename = 'electron.js'} = {}) {
         filename
       },
 
-      plugins: [
-        new webpack.BannerPlugin({
-          banner: `require('source-map-support').install();`,
-          raw: true, entryOnly: false
-        })
-      ].concat(get(this, 'plugins', [])),
-
       node: {
         __dirname: false,
         __filename: false

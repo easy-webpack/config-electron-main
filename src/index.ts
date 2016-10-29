@@ -1,11 +1,11 @@
-import {WebpackConfig, get} from '@easy-webpack/core'
+import {WebpackConfigWithMetadata, get} from '@easy-webpack/core'
 const webpack = require('webpack')
 
 /**
  * @param externals list packages that should be used as node modules, directly from node_modules (without bundling)
  */
 export = function electronMain({filename = 'electron.js'} = {}) {
-  return function electronMain(this: WebpackConfig): WebpackConfig {
+  return function electronMain(this: WebpackConfigWithMetadata): WebpackConfigWithMetadata {
     return {
       metadata: {
         ELECTRON: 'main'
